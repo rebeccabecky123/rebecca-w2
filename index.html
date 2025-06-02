@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca - Frontend Developer Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.22.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const Portfolio = () => {
+      const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+      return (
+        <div className="min-h-screen bg-gray-50 font-sans antialiased">
+         
+          
+          <nav className="bg-white shadow-lg sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+              <div className="flex justify-between items-center">
+                <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">Rebecca</h1>
+                <div className="hidden md:flex space-x-8">
+                  <a href="#about" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">About</a>
+                  <a href="#skills" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Skills</a>
+                  <a href="#projects" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Projects</a>
+                  <a href="#contact" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+                <div className="md:hidden">
+                  <button 
+                    className="text-gray-600 hover:text-blue-600 focus:outline-none" 
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle mobile menu"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              {mobileMenuOpen && (
+                <div className="md:hidden mt-4 space-y-2">
+                  <a href="#about" className="block text-gray-600 hover:text-blue-600 font-medium py-2">About</a>
+                  <a href="#skills" className="block text-gray-600 hover:text-blue-600 font-medium py-2">Skills</a>
+                  <a href="#projects" className="block text-gray-600 hover:text-blue-600 font-medium py-2">Projects</a>
+                  <a href="#contact" className="block text-gray-600 hover:text-blue-600 font-medium py-2">Contact</a>
+                </div>
+              )}
+            </div>
+          </nav>
+
+          <section className="bg-gradient-to-br from-violet-300 to-indigo-400 text-white py-20 sm:py-28">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 animate-bounce">Rebecca Byamungu</h2>
+             <p className="text-xl sm:text-2xl font-thin mb-6 tracking-wide text-gray-800">
+               Frontend Developer | 2+ Years of Expertise
+            </p>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-light text-gray-600">
+           Building seamless, responsive, and user-centric web applications with mastery in React, Next.js, TypeScript, and modern frontend technologies.
+          </p>
+
+              <a href="#contact" className="mt-8 inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+                Let's Collaborate
+              </a>
+              <div className="flex flex-col justify-center items-center">
+                <img 
+            src="beck.jpg" 
+            alt="Responsive Image" 
+            style={{ }} 
+            className="w-50 h-80 rounded-full mb-3 mt-8"/>
+                </div>
+            
+            </div>
+          </section>
+
+          <section id="about" className="py-16 sm:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-6 text-center">About Me</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                I'm Rebecca, a dedicated frontend developer with over two years of experience crafting high-quality, responsive web applications. 
+                My expertise spans HTML, CSS, JavaScript, React, Next.js,  TypeScript, and Vite with a focus on creating intuitive and performant user interfaces.
+                 I thrive on solving complex UI challenges, optimizing for accessibility, and delivering pixel-perfect designs. Passionate about clean code and continuous learning, 
+                I stay ahead of industry trends to build scalable, modern web solutions.
+              </p>
+            </div>
+          </section>
+
+          <section id="skills" className="py-16 sm:py-20 bg-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-8 text-center">Skills</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                {['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vite', ].map(skill => (
+                  <div key={skill} className="bg-white p-4 sm:p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform ">
+                    <p className="text-base sm:text-lg font-semibold text-gray-700">{skill}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" className="py-16 sm:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-8 text-center">Projects</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">E-Commerce Platform</h3>
+                  <p className="text-gray-600 mb-4 text-base sm:text-lg">
+                    Developed a fully responsive e-commerce platform using Next.js and TypeScript, featuring dynamic product pages, cart functionality, and server-side rendering for SEO.
+                  </p>
+                  <p className="text-sm text-gray-500">Technologies: Next.js, TypeScript, Tailwind CSS</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">Task Management App</h3>
+                  <p className="text-gray-600 mb-4 text-base sm:text-lg">
+                    Built a task management app with React and TypeScript, incorporating drag-and-drop functionality and state management with Redux.
+                  </p>
+                  <p className="text-sm text-gray-500">Technologies: React, TypeScript, Tailwind CSS, Redux</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">Portfolio Website</h3>
+                  <p className="text-gray-600 mb-4 text-base sm:text-lg">
+                    Created a personal portfolio using Next.js and Tailwind CSS, optimized for performance and showcasing responsive design.
+                  </p>
+                  <p className="text-sm text-gray-500">Technologies: Next.js, Tailwind CSS, JavaScript</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="py-16 sm:py-20 bg-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                I'm always excited to work on new projects or collaborate on innovative ideas. Reach out to discuss opportunities!
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="mailto:rebeccabyamungu6@gmail.com" className="text-blue-600 hover:text-blue-800 font-medium text-lg">rebeccabyamungu6@gmail.com</a>
+                <a href="https://linkedin.com/in/rebecca-byamungu" className="text-blue-600 hover:text-blue-800 font-medium text-lg">LinkedIn</a>
+                <a href="https://github.com/rebeccabecky123" className="text-blue-600 hover:text-blue-800 font-medium text-lg">GitHub</a>
+                <a href="https://facebook.com/moirebecca" className="text-blue-600 hover:text-blue-800 font-medium text-lg">Facebook</a>
+              </div>
+            </div>
+          </section>
+
+          <footer className="bg-gray-900 text-white py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <p className="text-base">© 2025 Rebecca Byamungu. All rights reserved.</p>
+            </div>
+          </footer>
+        </div>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Portfolio />);
+  </script>
+</body>
+</html>
